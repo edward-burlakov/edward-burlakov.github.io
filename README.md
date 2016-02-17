@@ -1,2 +1,2 @@
 # edward-burlakov.github.io
-# Here are my study homeworks
+# Here is my study homeworks
