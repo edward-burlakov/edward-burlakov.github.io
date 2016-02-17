@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson_7_Edward_Burlakov</title>
+    <script>
+        var $Click=0;
+        var $dblClick=0;
+        var $mouseover=0;
+        var $mouseout=0;
+        var $mouseenter=0;
+        var $mouseleave=0;
+        var $mouseup=0;
+        var $mousedown=0;
+        var $contextmenu=0;
+
+
+        function any_click($event)   {
+            alert('  ClientX:  ' + $event.clientX  +
+                    '  ClientY:  ' + $event.clientY  + '\n' +
+                    '  ScreenX:  ' + $event.screenX  +
+                    '  ScreenY:  ' + $event.screenY  + '\n' +
+                    '  altKey:   ' + $event.altKey   + '\n' +
+                    '  ctrlKey:  ' + $event.ctrlKey  + '\n' +
+                    '  shiftKey: ' + $event.shiftKey + '\n'
+            );
+        }
+        function my_click($event)   {
+                                    $Click++;
+                                    ShowAll();
+                                    alert('  ClientX:  ' + $event.clientX  +
+                                          '  ClientY:  ' + $event.clientY  + '\n' +
+                                          '  ScreenX:  ' + $event.screenX  +
+                                          '  ScreenY:  ' + $event.screenY  + '\n' +
+                                          '  altKey:   ' + $event.altKey   + '\n' +
+                                          '  ctrlKey:  ' + $event.ctrlKey  + '\n' +
+                                          '  shiftKey: ' + $event.shiftKey + '\n'
+                                    );
+        }
+
+        function my_dblClick()   { $dblClick++;     ShowAll();}
+
+        function my_mouseover()  { $mouseover++;    ShowAll();}
+
+        function my_mouseout()   { $mouseout++;     ShowAll();}
+
+        function my_mouseenter() { $mouseenter++;   ShowAll();}
+
+        function my_mouseleave() { $mouseleave++;   ShowAll();}
+
+        function my_mouseup() { $mouseup++;   ShowAll();}
+
+        function my_mousedown() { $mousedown++;   ShowAll();}
+
+        function my_noyandex($event) {  $event.preventDefault(); }
+
+        function my_contextmenu($event)   {   $contextmenu++;
+                                            ShowAll();
+                                            $event.preventDefault();
+                                          }
+
+        function ShowAll()
+        {
+             document.getElementById('div2').innerHTML=
+                "click:      "    + $Click        + '<br>' +
+                "dblclick:   "    + $dblClick     + '<br>' +
+                "mouseover:  "    + $mouseover    + '<br>' +
+                "mouseout:   "    + $mouseout     + '<br>' +
+                "mouseenter: "    + $mouseenter   + '<br>' +
+                "mouseleave: "    + $mouseleave   + '<br>' +
+                "mouseup:    "    + $mouseup      + '<br>' +
+                "mousedown:  "    + $mousedown    + '<br>' +
+                "contextmenu:"    + $contextmenu  + '<br>' ;
+        }
+
+
+    </script>
+
+</head>
+<body onclick="any_click(event);">
+
+<div  id="div1" style = "border: 1px solid black;"
+        onClick="my_click(event);"
+        onDblClick="my_dblClick();"
+        onMouseOver="my_mouseover();"
+        onMouseOut="my_mouseout();"
+        onMouseEnter="my_mouseenter();"
+        onMouseLeave="my_mouseleave();"
+        onContextMenu="my_contextmenu(event);"
+        onMouseUp="my_mouseup();"
+        onMouseDown="my_mousedown();" >
+
+        Some text1 <br>
+        Some text2 <br>
+        <input id="input1"  type="text">
+</div>
+<br>
+<a  href="http://yandex.ru" onclick=" my_noyandex(event);" > сайт Yandex </a>
+<br>
+<br>
+<div id="div2" style="border: 1px solid black;">
+        Some text3
+        <br>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+.body           {
+    background-color: beige;"
+}
+.hr             {
+    margin-left:      100px;
+    width:            90% ;
+    alignment:        left;
+}
+.div_base       {
+    margin-left:      30px;
+    padding-left:     15px;
+    border:           3px  lightblue solid;
+    border-radius:    6px;
+    background-image: url(../pictures/bg4v.jpg);
+    background-size:  contain;
+   /* анимация */
+    -webkit-transition-duration: 0.2s;
+    -o-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    /* базовая тень */
+    box-shadow:       15px 15px  15px grey;
+}
+.div_base:hover {
+    box-shadow:       15px 15px  15px;
+}
+.div_A          {
+    width:            400px;
+    height:           255px;
+    padding-top:      15px;
+    background-image: url(../pictures/cottonh.jpg);
+    text-align:       center;
+}
+.div_A:hover    {
+    background-image: url(../pictures/bg4h.jpg);
+    box-shadow:       15px 15px 15px;
+}
+.div_B          {
+    width:            280px;
+    height:           530px;
+    background-image: url(../pictures/cottonv.jpg);
+    color:            navajowhite  ;
+}
+.div_B:hover    {
+    background-image: url(../pictures/bg4v.jpg);
+    box-shadow:       15px 15px 15px;
+    color:            black  ;
+}
+.div_C          {
+    width:            400px;
+    height:           400px;
+    background-image: url(../pictures/cottonh.jpg);
+    padding-top:      15px;
+    padding-left:     65px;
+    color:            navajowhite  ;
+}
+.div_C:hover    {
+    background-image: url(../pictures/bg4h.jpg);
+    box-shadow:       15px 15px 15px;
+    color:            black  ;
+}
+.p1             {
+    font-size:        30px;
+    text-decoration:  underline  ;
+    color:            navajowhite;
+}
+.p2             {
+    width:            50px;
+    border:           4px darkred;
+    border-style:     inset;
+    font-style:       italic ;
+    font-weight:      bold;
+    color:            darkblue ;   /*Цвет шрифта */
+    background-color: lightblue;   /*Цвет фона шрифта */
+    padding-left:     40px;         /*Отступ текста слева */
+}
+textarea {
+    resize: none;
+}
+

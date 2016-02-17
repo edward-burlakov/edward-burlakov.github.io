@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson_8_Edward_Burlakov_Page2</title>
+<style>
+    @import url("style/MyStyle.css");
+</style>
+<script>
+        var $keydown1=0;
+        var $keyup1=0;
+        var $keypress1=0;
+        var $onfocus1=0;
+        var $onchange1=0;
+        var $onblur1=0;
+        var $string1='';
+        var $x=0;
+        var $c=0;
+
+        function   my_key_up1()
+        {
+            $keyup1++;
+            document.getElementById('counter2').innerHTML= $keyup1 ;
+        }
+        function   my_key_down1($event)   /* Обработчик события нажатия клавиши в поле INPUT  */
+        {
+            var  $x = ( $event.keyCode || $event.which );
+            $keydown1++;
+            document.getElementById('counter1').innerHTML  = $keydown1 ;/* Вывести счетчик нажатий в поле INPUT */
+            if  ($x == '8')
+            {
+                $string1 = document.getElementById('my_result1').innerHTML ;
+                var $c = $string1.length;
+                document.getElementById('my_result1').innerHTML = $string1.substring(0 , $c - 1 );
+            }
+        }
+
+
+        function   my_key_press1($event)   /* Обработчик события полного нажатия клавиши в поле INPUT  */
+        {
+            var  $x = ( $event.keyCode || $event.which );
+            var  $x_char = String.fromCharCode($x);
+            $keypress1++;
+            document.getElementById('counter3').innerHTML= $keypress1 ;/* Вывести счетчик полных нажатий в поле INPUT*/
+
+            if  ($x_char == 'a')
+                {
+                     $x_char= 'A';
+                }
+            /* Добавить символ в поле 'my_result'   */
+            document.getElementById('my_result1').innerHTML= document.getElementById('my_result1').innerHTML + $x_char;
+        }
+
+
+        function   my_change1()
+        {
+            $onchange1++;
+            document.getElementById('counter4').innerHTML= $onchange1;
+
+        }
+        function   my_focus1()
+        {
+            $onfocus1++;
+            document.getElementById('counter5').innerHTML= $onfocus1 ;
+        }
+        function   my_blur1()
+        {
+            $onblur1++;
+            document.getElementById('counter6').innerHTML= $onblur1 ;
+        }
+</script>
+</head>
+<body class="body">
+    <br>
+    <hr  class="hr">
+    <br>
+    <table style = "margin-left:10px;">
+            <tr>
+                    <td valign="top" >
+                         <div class="div_base div_D"
+                              onkeyup   = "my_key_up1();"
+                              onkeydown = "my_key_down1(event);"
+                              onkeypress= "my_key_press1(event);" >
+                                  <div  class="p1"><b><i>Источник</i></b></div>
+                                   <div>
+                                        <p class="p1">
+                                             <input id="input1" type=text align="center"
+                                                    onChange=   "my_change1();"
+                                                    onFocus=    "my_focus1();"
+                                                    onBlur=     "my_blur1();"
+                                             >
+                                        </p>
+                                  </div>
+                         </div>
+                    </td>
+                    <td valign="top" >
+                             <div class="div_base div_E">
+                                 <br>
+                                 <b>Кнопка клавиатуры нажата</b>
+
+                                 <div><p id="counter1" class="p2"></p></div>
+
+                                 <b>Кнопка  клавиатуры отпущена</b>
+
+                                 <div><p id="counter2" class="p2"></p></div>
+
+                                 <b>Кнопка клавиатуры удерживается</b>
+
+                                 <div><p id="counter3" class="p2"></p></div>
+
+                                 <b>Поле ввода поменяло значение</b>
+
+                                 <div><p id="counter4" class="p2"></p></div>
+
+                                 <b>Поле ввода в фокусе</b>
+
+                                 <div><p id="counter5" class="p2"></p></div>
+
+                                 <b>Поле ввода потеряло фокус</b>
+
+                                 <div><p id="counter6" class="p2"></p></div>
+                             </div>
+                    </td>
+                    <td valign="top" >
+                        <div class="div_base div_D"  >
+                                <div class="p1"	 ><b><i>Результат</i></b></div>
+                                <br>
+                                <div>
+                                    <textarea  id="my_result1" cols="40"  rows="11" onkeydown="return false" readonly ></textarea>
+                                </div>
+                        </div>
+                    </td>
+            </tr>
+    </table>
+    <br>
+    <hr  class="hr" >
+    <br>
+</body>
+</html>

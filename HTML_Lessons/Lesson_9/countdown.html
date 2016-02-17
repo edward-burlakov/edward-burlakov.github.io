@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главный счетчик</title>
+    <style>
+        @import url("style/countdown.css");
+    </style>
+    <script type="text/javascript" src="js/jquery.min_1_8_2.js"></script>
+	<script type="text/javascript" src="js/jquery.countdown.js"></script>
+    <script type="text/javascript">
+        var cdate = "02:03:32:00";
+        jQuery(function($){$("#ps_counter").countdown({image: "js/digits.png",startTime: cdate }); });
+    </script>
+</head>
+
+<body>
+<div class="titleoftimer">
+    <p >До сдачи домашнего задания осталось:</p>
+</div>
+<div class="ps_countdown_wrap">
+    <div id="ps_counter"></div>
+        <div class="ps_counter_desc">
+            <div>Дней</div>
+            <div>Часов</div>
+            <div>Минут</div>
+            <div>Секунд</div>
+    </div>
+
+</div>
+
+
+</body>
+</html>

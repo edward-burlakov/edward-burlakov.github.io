@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson_7_Edward Burlakov</title>
+    <style type="text/css">
+
+    .div_A {
+        margin: 20px;
+        height: 240px;
+        width: 500px;
+        border: 4px  lightblue solid;
+        background: #c0e4ff;
+        background-image: url(bg1.jpg);
+        background-size: contain;
+        padding: 50px;
+        border-radius: 6px;
+        box-shadow: 10px 10px  10px grey;
+    }
+    .div_A:hover {
+        background-image: url(bg4.jpg);
+        background-size: contain;
+        box-shadow: 10px 10px  10px;
+    }
+    .div_B {
+        margin: 20px;
+        width:  400px;
+        height: 800px;
+        border: 3px  lightblue solid;
+        background-color: #c0e4ff;
+        background-image: url(bg4.jpg);
+        background-size: contain;
+        padding-left: 50px;
+        border-radius: 6px;
+        box-shadow: 10px 10px  10px grey;
+    }
+    .div_B:hover {
+        box-shadow: 10px 10px  10px;
+    }
+    .div_C {
+        margin: 20px;
+        width:  300px;
+        height: 240px;
+        border: 3px  lightblue solid;
+        background-color: #c0e4ff;
+        background-image: url(bg4.jpg);
+        background-size: contain;
+        padding-left: 50px;
+
+        border-radius: 6px;
+        opacity: 0.9;
+        box-shadow: 10px 10px  10px grey;
+    }
+    .div_C:hover {
+        box-shadow: 10px 10px  10px;
+    }
+    .p1 {
+        margin-left: 5px;
+        font-weight: bold;
+    }
+    .p2 {
+        border: 4px darkred;
+        border-style: inset;
+        margin-left: 15px;
+        align-content: center;
+        color: darkblue ;
+        width: 50px;
+        background: lightcyan;
+        font-style: italic ;
+        padding-left: 10px;
+
+    }
+
+    </style>
+    <script>
+        var $click2=0;
+        var $dblclick2=0;
+        var $mouseover2=0;
+        var $mouseout2=0;
+        var $mouseenter2=0;
+        var $mouseleave2=0;
+        var $mouseup2=0;
+        var $mousedown2=0;
+        var $contextmenu2=0;
+
+        function my_click()
+        {
+            $click2++;
+            ShowAll();
+            document.getElementById('line11').innerHTML= $click2;
+        }
+        function my_dblclick()
+        {
+            $dblclick2++;
+            ShowAll();
+            document.getElementById('line12').innerHTML = $dblclick2;
+        }
+        function my_mouseover()
+        {
+            $mouseover2++;
+            ShowAll();
+            document.getElementById('line13').innerHTML = $mouseover2;
+        }
+        function my_mouseout()
+        {
+            $mouseout2++;
+            ShowAll();
+            document.getElementById('line14').innerHTML = $mouseout2;
+        }
+        function my_mouseenter()
+        {
+            $mouseenter2++;
+            ShowAll();
+            document.getElementById('line15').innerHTML = $mouseenter2;
+        }
+        function my_mouseleave()
+        {
+            $mouseleave2++;
+            ShowAll();
+            document.getElementById('line16').innerHTML = $mouseleave2;
+        }
+        function my_mouseup()
+        {
+            $mouseup2++;
+            ShowAll();
+            document.getElementById('line17').innerHTML = $mousedown2;
+        }
+        function my_mousedown()
+        {
+            $mousedown2++;
+            ShowAll();
+            document.getElementById('line18').innerHTML = $mouseup2;
+        }
+        function my_contextmenu($event)
+        {
+            $contextmenu2++;
+            ShowAll();
+            $event.preventDefault();
+            document.getElementById('line19').innerHTML = $contextmenu2;
+            alert('  ClientX:  ' + $event.clientX +
+                    '  ClientY:  ' + $event.clientY + '\n' +
+                    '  ScreenX:  ' + $event.screenX +
+                    '  ScreenY:  ' + $event.screenY + '\n' +
+                    '  altKey:   ' + $event.altKey + '\n' +
+                    '  ctrlKey:  ' + $event.ctrlKey + '\n' +
+                    '  shiftKey: ' + $event.shiftKey + '\n'
+            );
+        }
+        function ShowAll()
+        {
+            document.getElementById('div3').innerHTML=
+                    "click:      "    + $click2        + '<br>' +
+                    "dblclick:   "    + $dblclick2     + '<br>' +
+                    "mouseover:  "    + $mouseover2    + '<br>' +
+                    "mouseout:   "    + $mouseout2     + '<br>' +
+                    "mouseenter: "    + $mouseenter2   + '<br>' +
+                    "mouseleave: "    + $mouseleave2   + '<br>' +
+                    "mouseup:    "    + $mouseup2      + '<br>' +
+                    "mousedown:  "    + $mousedown2    + '<br>' +
+                    "contextmenu:"    + $contextmenu2  + '<br>' ;
+        }
+
+    </script>
+
+</head>
+
+<body style="margin-left: 5% ; background-color: beige;" oncontextmenu="my_contextmenu(event);">
+<table>
+        <tr>
+                <td valign="top" height="200" >
+                        <div id="div1" class="div_A"
+                             onclick="my_click();"
+                             ondblclick="my_dblclick();"
+                             onmouseover="my_mouseover();"
+                             onmouseout="my_mouseout();"
+                             onmouseenter="my_mouseenter();"
+                             onmouseleave="my_mouseleave();"
+                             onmousedown="my_mousedown();"
+                             onmouseup="my_mouseup();"
+                        >
+                           <p  class="p1" style="font-size: 50px">
+                                <a href="http://www.google.ru" > WWW.GOOGLE.RU  </a>
+                           </p>
+                        </div>
+                </td>
+                <td rowspan="2" >
+                    <div id="div2" class="div_B">
+                            <p class="p1">Клик мыши</p>
+
+                            <div id="line11" class="p2"> </div>
+
+                            <p class="p1">Даблклик мыши </p>
+
+                            <div id="line12" class="p2"> </div>
+
+                            <p class="p1" >Мышь появилась над элементом </p>
+
+                            <div><p id="line13" class="p2"></p></div>
+
+                            <p class="p1" >Мышь ушла с элемента </p>
+
+                            <div><p id="line14" class="p2"></p></div>
+
+                            <p class="p1" >Мышь вошла в границы элемента</p>
+
+                            <div><p id="line15" class="p2"></p></div>
+
+                            <p class="p1" >Мышь вышла за границы элемента</p>
+
+                            <div><p id="line16" class="p2"></p></div>
+
+                            <p class="p1" >Кнопка мыши отпущена</p>
+
+                            <div><p id="line17" class="p2"></p></div>
+
+                            <p class="p1" >Кнопка мыши нажата</p>
+
+                             <div><p id="line18" class="p2"></p></div>
+                            <p class="p1" >Появилось Контекстное меню </p>
+
+                            <div><p id="line19" class="p2"></p></div>
+                        </div>
+                </td>
+        </tr>
+        <tr>
+              <td>
+                        <div  class="div_C">
+                            <p><b><i>Панель фонового контроля</i></b></p>
+                            <div id="div3" >
+                            </div>
+                        </div>
+              </td>
+        </tr>
+</table>
+</body>
+</html>

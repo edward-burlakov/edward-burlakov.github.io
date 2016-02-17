@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson_8_Edward_Burlakov_Page_1</title>
+    <style type="text/css">
+        @import url("style/MyStyle.css");
+    </style>
+    <script>
+        var $click=0;
+        var $dblclick=0;
+        var $mouseover=0;
+        var $mouseout=0;
+        var $mouseenter=0;
+        var $mouseleave=0;
+        var $mouseup=0;
+        var $mousedown=0;
+        var $contextmenu=0;
+        var $keydown=0;
+        var $keyup=0;
+        var $keypress=0;
+        var $change=0;
+        var $focus=0;
+        var $blur=0;
+        var $string1='';
+        var $x=0;
+        var $c=0;
+
+        function ShowAll()
+        {
+            document.getElementById('div_panel').innerHTML=
+                    "<hr color=red >" +
+                    "click:      "    + $click        + '<br>' +
+                    "dblclick:   "    + $dblclick     + '<br>' +
+                    "mouseover:  "    + $mouseover    + '<br>' +
+                    "mouseout:   "    + $mouseout     + '<br>' +
+                    "mouseenter: "    + $mouseenter   + '<br>' +
+                    "mouseleave: "    + $mouseleave   + '<br>' +
+                    "mouseup:    "    + $mouseup      + '<br>' +
+                    "mousedown:  "    + $mousedown    + '<br>' +
+                    "contextmenu:"    + $contextmenu  + '<br>'
+                    + "<hr  color= red >" +
+                    "keydown:    "    + $keydown      + '<br>' +
+                    "keyup:      "    + $keyup        + '<br>' +
+                    "keypress:   "    + $keypress     + '<br>'
+                    + "<hr  color=red >"  +
+                    "change:     "    + $change       + '<br>' +
+                    "focus:      "    + $focus        + '<br>' +
+                    "blur:       "    + $blur         + '<br>' ;
+        }
+        function my_click()
+        {
+                    $click++;
+                    ShowAll();
+                    document.getElementById('line1').innerHTML= $click;
+        }
+        function my_dblclick()
+        {
+                    $dblclick++;
+                    ShowAll();
+                    document.getElementById('line2').innerHTML = $dblclick;
+        }
+        function my_mouseover()
+        {
+                    $mouseover++;
+                    ShowAll();
+                    document.getElementById('line3').innerHTML = $mouseover;
+        }
+        function my_mouseout()
+        {
+                    $mouseout++;
+                    ShowAll();
+                    document.getElementById('line4').innerHTML = $mouseout;
+        }
+        function my_mouseenter()
+        {
+                    $mouseenter++;
+                    ShowAll();
+                    document.getElementById('line5').innerHTML = $mouseenter;
+        }
+        function my_mouseleave()
+        {
+                    $mouseleave++;
+                    ShowAll();
+                    document.getElementById('line6').innerHTML = $mouseleave;
+        }
+        function my_mousedown()
+        {
+                    $mousedown++;
+                    ShowAll();
+                    document.getElementById('line7').innerHTML = $mousedown;
+        }
+        function my_mouseup()
+        {
+                    $mouseup++;
+                    ShowAll();
+                    document.getElementById('line8').innerHTML = $mouseup;
+        }
+        function my_contextmenu($event)
+        {
+                    $contextmenu++;
+                    ShowAll();
+                    $event.preventDefault();
+                    document.getElementById('line9').innerHTML = $contextmenu;
+                    alert   ('  ClientX:  ' + $event.clientX +
+                            '  ClientY:  ' + $event.clientY + '\n' +
+                            '  ScreenX:  ' + $event.screenX +
+                            '  ScreenY:  ' + $event.screenY + '\n' +
+                            '  altKey:   ' + $event.altKey + '\n' +
+                            '  ctrlKey:  ' + $event.ctrlKey + '\n' +
+                            '  shiftKey: ' + $event.shiftKey + '\n'
+                    );
+        }
+
+        function my_key_down($event)   /* Обработчик события нажатия клавиши в поле INPUT  */
+        {
+            var  $x = ( $event.keyCode || $event.which );
+            $keydown++;
+            document.getElementById("line10").innerHTML  = $keydown ;/* Вывести счетчик нажатий в поле INPUT */
+            if  ($x == '8')
+            {
+                $string1 = document.getElementById('my_result').innerHTML ;
+                var $c = $string1.length;
+                document.getElementById('my_result').innerHTML = $string1.substring(0 , $c - 1 );
+            }
+        }
+
+        function my_key_up()
+        {
+            $keyup++;
+            ShowAll();
+            document.getElementById('line11').innerHTML = $keyup;
+        }
+
+        function   my_key_press($event)   /* Обработчик события полного нажатия клавиши в поле INPUT  */
+        {
+            var  $x = ( $event.keyCode || $event.which );
+            var  $x_char = String.fromCharCode($x);
+            $keypress++;
+            document.getElementById('line12').innerHTML= $keypress ;/* Вывести счетчик полных нажатий в поле INPUT*/
+
+            /* Заменить символ "а" на "А" .Вариант 1
+/*            if  ($x_char == 'a')
+            {
+                $x_char= 'A';
+            }*/
+
+            /* Добавить символ в поле 'my_result'     */
+            document.getElementById('my_result').innerHTML= document.getElementById('my_result').innerHTML + $x_char;
+
+            /* Заменить символ "а" на "А"  Вариант2   */
+            document.getElementById('my_result').innerHTML=document.getElementById('my_result').innerHTML.replace(/a/g,"A");
+        }
+
+        function my_change()
+        {
+                    $change++;
+                    ShowAll();
+        }
+        function my_focus()
+        {
+                    $focus++;
+                    ShowAll();
+        }
+        function my_blur()
+        {
+                    $blur++;
+                    ShowAll();
+        }
+    </script>
+</head>
+<body  class=body  oncontextmenu="my_contextmenu(event);">
+
+<table style = "margin-left:50px;">
+        <tr>
+                <td valign="top" >
+                        <div class="div_base div_A"
+                             onclick="my_click();"
+                             ondblclick="my_dblclick();"
+                             onmouseover="my_mouseover();"
+                             onmouseout="my_mouseout();"
+                             onmouseenter="my_mouseenter();"
+                             onmouseleave="my_mouseleave();"
+                             onmousedown="my_mousedown();"
+                             onmouseup="my_mouseup();"
+                             onkeydown="my_key_down(event);"
+                             onkeyup="my_key_up();"
+                             onkeypress="my_key_press(event);"
+                        >
+                              <div class="p1">
+                                    <p>
+                                        <a href="http://www.google.ru" > WWW.GOOGLE.RU  </a>
+                                        <div>
+                                             <input id="q" type=text  name="q"
+                                                  onChange="my_change();"
+                                                  onFocus="my_focus();"
+                                                  onBlur="my_blur();"
+                                             >
+                                       </div>
+                                       <br>
+                                    </p>
+                              </div>
+                        </div>
+                </td>
+                <td rowspan="2" >
+                        <div class="div_base div_C">
+                                <br><b>Клик мыши</b>
+
+                                <div><p id="line1" class="p2" ></p></div>
+
+                                <b>Даблклик мыши </b>
+
+                                <div><p id="line2" class="p2"></p></div>
+
+                                <b>Мышь появилась над элементом </b>
+
+                                <div><p id="line3" class="p2"></p></div>
+
+                                <b>Мышь ушла с элемента </b>
+
+                                <div><p id="line4" class="p2"></p></div>
+
+                                <b>Мышь вошла в границы элемента</b>
+
+                                <div><p id="line5" class="p2"></p></div>
+
+                                <b>Мышь вышла за границы элемента</b>
+
+                                <div><p id="line6" class="p2"></p></div>
+
+                                <b>Кнопка мыши нажата</b>
+
+                                <div><p id="line7" class="p2"></p></div>
+
+                                <b>Кнопка мыши отпущена</b>
+
+                                <div><p id="line8" class="p2"></p></div>
+
+                                <b>Контекстное меню </b>
+
+                                <div><p id="line9" class="p2"></p></div>
+
+                                <b>Кнопка клавиатуры нажата</b>
+
+                                <div><p id="line10" class="p2"></p></div>
+
+                                <b>Кнопка  клавиатуры отпущена</b>
+
+                                <div><p id="line11" class="p2"></p></div>
+
+                                <b>Кнопка клавиатуры удерживается</b>
+
+                                <div><p id="line12" class="p2"></p></div>
+                        </div>
+                </td>
+        </tr>
+        <tr>
+              <td valign="top">
+                        <div  class="div_base div_B" >
+                                 <br>
+                                 <p><b><i>Панель контроля</i></b></p>
+                                 <div id="div_panel" ></div>
+                                 <p><b><i>Результат</i></b></p>
+                                 <div>
+                                    <textarea  id="my_result" cols="43"  rows="8" onkeydown="return false" readonly ></textarea>
+                                 </div>
+                        </div>
+              </td>
+        </tr>
+</table>
+</body>
+</html>
