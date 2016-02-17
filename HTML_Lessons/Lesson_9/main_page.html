@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson_9_Edward_Burlakov.main_page.html</title>
+    <style>
+        @import url("style/main_page.css");
+        @import url("style/counter.css");
+    </style>
+    <script type="text/javascript" src="js/counter-up.js"></script>
+    <script type="text/javascript" src="js/jquery.min_1_8_2.js"></script>
+    <script>
+        var $keydown1=0;
+        var $keyup1=0;
+        var $keypress1=0;
+        var $onfocus1=0;
+        var $onchange1=0;
+        var $onblur1=0;
+        var $string1=' ';
+        var $c=0;
+        var $timer1;
+        var $timer2; /* Используется внутри функции getfrominputs_321() */
+
+        //  Спрятать нижний фрейм со счетчиком
+        function hide_iframe (x, y) {
+            var ifr=document.getElementById('myiframe');
+            ifr.height=y; ifr.width=x;
+            document.getElementById("hide_link").innerHTML="";
+            document.getElementById('input1').style.backgroundColor = "white";
+        }
+        function color_input() {
+            document.getElementById('input1').style.backgroundColor = "red";
+            document.getElementById('myiframe').style.backgroundColor = "red";
+        }
+        function   my_key_up1()
+        {
+            $keyup1++;
+            document.getElementById('counter2').innerHTML= $keyup1 ;
+        }
+        function   my_key_down1($event)   /* Обработчик события нажатия клавиши в поле INPUT  */
+        {
+            var  $x = ( $event.keyCode || $event.which );
+            $keydown1++;
+            document.getElementById('counter1').innerHTML  = $keydown1 ;/* Вывести счетчик нажатий в поле INPUT */
+            document.getElementById('input1').style.backgroundColor = "white";
+            document.getElementById('myiframe').style.backgroundColor = "white";
+
+            // Предупреждение о бездействии
+            clearTimeout($timer1);
+            $timer1=setTimeout("color_input();",5000);
+
+            // Перезапустить счетчик последнего нажатия клавиши в строке ввода "Источник"
+            getfrominputs_321();
+
+            // Обработка нажатия клавиши "BACKSPACE"
+            if  ($x == '8') {
+                $string1 = document.getElementById('input1').value;
+                var $c = $string1.length;
+                document.getElementById('my_result1').innerHTML = $string1.substring(0, $c - 1);
+            }
+        }
+        function   my_key_press1($event)   /* Обработчик события полного нажатия клавиши в поле INPUT  */
+        {
+            var  $x = ( $event.keyCode || $event.which );
+            var  $x_char = String.fromCharCode($x);
+            $keypress1++;
+            document.getElementById('counter3').innerHTML= $keypress1 ;/* Вывести счетчик полных нажатий в поле INPUT*/
+
+            if  ($x_char == 'a')
+                {
+                    $x_char= 'A';
+                }
+            /* Добавить символ в поле 'my_result'   */
+            document.getElementById('my_result1').innerHTML= document.getElementById('my_result1').innerHTML + $x_char;
+        }
+        function   my_change1()
+        {
+            $onchange1++;
+            document.getElementById('counter4').innerHTML= $onchange1;
+        }
+        function   my_focus1()
+        {
+            $onfocus1++;
+            document.getElementById('counter5').innerHTML= $onfocus1 ;
+        }
+        function   my_blur1()
+        {
+            $onblur1++;
+            document.getElementById('counter6').innerHTML= $onblur1 ;
+        }
+</script>
+</head>
+<body class="body">
+    <br>
+    <hr  class="hr">
+    <br>
+    <table style = "margin-left:100px;">
+         <tr>
+               <td valign="top">
+                       <div class="div_base div_A"
+                                      onkeyup   = "my_key_up1(); "
+                                      onkeydown = "my_key_down1(event);"
+                                      onkeypress= "my_key_press1(event);" >
+
+                                 <div  class="p1"><b><i>Источник</i></b></div>
+                                 <div class="p1">
+                                              <input name="input1" id="input1" type=text align="center"
+                                                       onChange=   "my_change1();"
+                                                       onFocus=    "my_focus1();"
+                                                       onBlur=     "my_blur1();"
+                                              >
+                                 </div>
+                       </div>
+               </td>
+               <td valign="top" >
+                       <div class="div_base div_B">
+                                 <br>
+                                 <b>Кнопка клавиатуры нажата</b>
+
+                                 <div><p id="counter1" class="p2"></p></div>
+
+                                 <b>Кнопка  клавиатуры отпущена</b>
+
+                                 <div><p id="counter2" class="p2"></p></div>
+
+                                 <b>На кнопке клавиатуры был пресс</b>
+
+                                 <div><p id="counter3" class="p2"></p></div>
+
+                                 <b>Поле ввода поменяло значение</b>
+
+                                 <div><p id="counter4" class="p2"></p></div>
+
+                                 <b>Поле ввода в фокусе</b>
+
+                                 <div><p id="counter5" class="p2"></p></div>
+
+                                 <b>Поле ввода потеряло фокус</b>
+
+                                 <div><p id="counter6" class="p2"></p></div>
+                       </div>
+               </td>
+               <td valign="top" >
+                       <div class="div_base div_C"  >
+                                <div class="p1" style="margin-left: 100px;"><b><i>Результат</i></b></div>
+                                <br>
+                                <div>
+                                    <textarea  name="my_result1" id="my_result1" cols="38"  rows="12" readonly  onkeydown = "return false">
+                                    </textarea>
+                                </div>
+                                <div class="p1"><i>C момента  изменения поля :</i></div>
+                                <div class="first-my timerhello timerhello_321 " >
+                                   <div class="first-my-content">
+
+                                       <p class="titles">
+                                           <span class="dd">дней</span>
+                                           <span class="hh">часов</span>
+                                           <span class="mm">минут</span>
+                                           <span class="ss">секунд</span>
+                                       </p>
+                                       <p class="result">
+                                       <p class="result">
+                                           <span class="result-day" style="color: rgb(65, 88, 217);">00</span>
+                                           <span class="result-hour" style="color: rgb(65, 88, 217);">00</span>
+                                           <span class="result-minute" style="color: rgb(65, 88, 217);">00</span>
+                                           <span class="result-second" style="color: rgb(65, 88, 217);">00</span>
+                                       </p>
+                                       <div class="clearf"></div>
+                                   </div>
+                               </div>
+                       </div>
+               </td>
+         </tr>
+    </table>
+    <br>
+    <hr  class="hr" >
+    <br>
+
+    <div align="center">
+    <iframe id="myiframe" src="countdown.html"  align="center" width="700" height="230"></iframe>
+    <br>
+    <br>
+    <a id="hide_link" href="javascript:hide_iframe(0,0)">Расслабиться</a>
+    </div>
+
+</body>
+</html>
