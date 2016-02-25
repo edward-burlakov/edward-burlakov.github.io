@@ -1,0 +1,126 @@
+body    {
+    margin-left : 10%;  /*слева от элемента */
+    margin-right : 40%;  /*справа от элемента */
+}
+.green {
+    padding-left : 5%;  /*слева от элемента */
+    color:green;
+    font-weight: bold;
+    font-size: 14px;
+}
+.header {
+    background-color: cornflowerblue;
+    padding-left:  630px;
+    border: 1px solid ;
+}
+.headline {
+    color:red;
+    height:2px;
+    width:100%;
+
+}
+.t1 {
+    border: 1px;
+    margin-left : -15px;
+    alignment: center ;
+}
+table.t1:hover {
+    border: 1px solid cornflowerblue;
+    box-shadow: 15px 15px 15px lightskyblue;
+}
+.anitab1:hover {
+    animation: anim1 5s;
+    -webkit-animation: anim1 5s;
+}
+.anitab2:hover {
+    animation: anim2 5s;
+    -webkit-animation: anim2 5s;
+}
+@keyframes  anim1 {
+    0% {transform:rotate(0deg) ;opacity: 1.0;}
+    15% {transform:rotate(360deg) ; opacity: 0.6;}
+    50% {transform: translate(200px,100px) scale(2,2) ; opacity: 1.0;}
+    90% {transform: rotate(360deg) ; opacity: 0.9;}
+    100% {transform:rotate(0deg) ;opacity: 1.0;}
+}
+@-webkit-keyframes anim1 {
+    0% {transform:rotate(0deg) ;opacity: 1.0;}
+    15% {transform:rotate(360deg) ; opacity: 0.6;}
+    50% {transform: translate(200px,100px) scale(2,2) ; opacity: 1.0;}
+    90% {transform: rotate(360deg) ; opacity: 0.9;}
+    100% {transform:rotate(0deg) ;opacity: 1.0;}
+}
+@keyframes  anim2 {
+    0% {transform:rotate(0deg) ;opacity: 1.0;}
+    15% {transform:rotate(360deg) ; opacity: 0.6;}
+    50% {transform: translate(-200px,100px) scale(2,2) ; opacity: 1.0;}
+    90% {transform: rotate(360deg) ; opacity: 0.9;}
+    100% {transform:rotate(0deg) ;opacity: 1.0;}
+}
+@-webkit-keyframes anim2 {
+    0% {transform:rotate(0deg) ;opacity: 0.5;}
+    15% {transform:rotate(360deg) ; opacity: 1.0;}
+    50% {transform: translate(-200px,100px) scale(2,2) ; opacity: 1.0;}
+    90% {transform: rotate(360deg) ; opacity: 0.9;}
+    100% {transform:rotate(0deg) ;opacity: 1.0;}
+}
+.optcR {
+    color:red;
+    font-weight:normal;
+}
+.optcB {
+    color:blue;
+    font-weight:normal;
+}
+h1 {
+    font-family: 'Times New Roman', Times, serif; /* Гарнитура текста */
+    font-size:170%; /* Размер шрифта в процентах */
+    font-weight: bold;
+    font-kerning: auto;
+    margin-left: 50px;
+}
+p  {
+    color: navy; /* Синий цвет текста */
+    margin: 3%;  /*вокруг элемента */
+    margin-left: 20px; /* Отступ текста слева */
+    padding: 15px; /* Расстояние от линии до текста */
+    background-color: dodgerblue ;
+    text-align: justify; /* Выравнивание текста по ширине */
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10pt; /* Размер шрифта в пунктах */
+    font-weight: 500;
+    font-kerning: auto;
+    border: solid 1px black;
+
+    border-radius: 4px;
+    box-shadow: 10px 10px 5px lightskyblue;
+}
+.button {
+    box-shadow: 5px 5px 5px grey;
+    margin-left: 420px;}
+
+.button:hover {
+     box-shadow: 5px 5px 5px lightskyblue;
+}
+
+.footer {
+    margin: 5%; /*вокруг элемента */
+    display: block;
+    box-shadow: 8px 8px 8px lightskyblue;
+    opacity: 0.8;
+}
+.valid {
+    box-shadow: 0 0 7px rgba(0, 200, 0, 0.92) !important;
+}
+
+.notValid {
+    box-shadow: 0 0 7px rgba(230, 0, 0, 0.92) ;
+    border: solid 2px red;
+}
+
+div.error {
+    color: #E60000;
+    margin: 8px 0 0 20px;
+}
+
+
