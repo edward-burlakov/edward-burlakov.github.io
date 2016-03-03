@@ -3,63 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <title>Lesson_10_Edward_Burlakov_Main_Page.</title>
-    <script type="text/javascript" language="JavaScript" src="js/jquery.min_1_8_2.js"></script>
-    <script type="text/javascript" language="JavaScript" src="js/snow.js"></script>
-    <script type="text/javascript" language="JavaScript" src="js/preprocessor.js"></script>
+    <script type="text/javascript" src="js/jquery.min_1_8_2.js"></script>
+    <script type="text/javascript" src="js/snow.js"></script>
+    <script type="text/javascript" src="js/preprocessor.js"></script>
     <style>   @import url("style/index.css"); </style>
 </head>
-<body background= "images/back.jpg" >
+<body>
 <table class=t1 >
         <tr >
-            <td class=anitab1 >
-                <img src="http://old.academ.info/upload/ao_images/2015/10/33708/src_9afccfd99c65dc0c.jpg"
-                     width=247px
-                     height=160px
-                     alt="Фото НГУ 1">
+            <td class="anitab1" >
+                <img class="img" src="http://old.academ.info/upload/ao_images/2015/10/33708/src_9afccfd99c65dc0c.jpg" alt="Фото НГУ 1">
             </td>
-            <td class=anitab1 >
-                <img src="http://ic.pics.livejournal.com/l_boris/18887691/805329/805329_900.jpg"
-                     width=247px
-                     height=160px
-                     alt="Фото НГУ 2">
+            <td class="anitab1" >
+                <img class="img" src="http://ic.pics.livejournal.com/l_boris/18887691/805329/805329_900.jpg" alt="Фото НГУ 2">
             </td>
-            <td class=anitab1 >
-                <img src="http://rus.rus4all.ru/images/72631/44/726314456.jpg"
-                     width=247px
-                     height=160px
-                     alt="Фото НГУ 3">
+            <td class="anitab1" >
+                <img class="img" src="http://rus.rus4all.ru/images/72631/44/726314456.jpg" alt="Фото НГУ 3">
             </td>
-            <td class=anitab2 >
-                <img	src="http://pda.fedpress.ru/sites/fedpress/files/dlinnyjchulok/news/hzdpqyzmox4_0.jpg"
-                        width=247px
-                        height=160px
-                        alt="Фото НГУ 4">
+            <td class="anitab2" >
+                <img  class="img" src="http://pda.fedpress.ru/sites/fedpress/files/dlinnyjchulok/news/hzdpqyzmox4_0.jpg" alt="Фото НГУ 4">
             </td>
         </tr>
 </table>
 <br>
 <br>
     <hr class=headline >
-    <h1 align="center"> Библиотека Новосибирского Государственного Университета</h1>
+    <h1> Библиотека Новосибирского Государственного Университета</h1><br><br>
     <hr class=headline >
-    <br>
-    <h1> Новая регистрация: </h1>
+    <h2> Новая регистрация: </h2>
     <form  action="http://myhost.com/result.php" method=get>
-                <p style="background-color:yellow;">
+                <p class ="yellow" >
                         <input  type=checkbox name="tempreg"  aria-label="s1" value=true >  Временная регистрация <br>
                         <input  type=checkbox name="oldlost" aria-label="s2"  value=true >  Предъявлен читательский билет старого образца или утерян.
                 </p>
-                <p>
-                        <p><b>Фамилия  :        </b>     <input class=green type=text  name="surname"    id="userSurName" >   </p>       <div class="error"  id="userSurName_err" ></div>
-                        <p><b>Имя :             </b>         <input class=green type=text  name="username"   id="userFirstName" > </p>       <div class="error"  id="userFirstName_err" ></div>
-                        <p><b>Отчество :        </b>    <input class=green type=text  name="middlename" id="userMiddleName"> </p>       <div class="error"  id="userMiddleName_err"></div>
-                        <p><b>Электронная почта:</b>  <input class=green type=text name="email"   id="userEmail"  >  </p>       <div class="error"  id="userEmail_err" ></div>
-                        <p><b>Сотовый телефон : </b>   <input class=green type=text name="phone"   id="phoneNumber">  </p>       <div class="error"  id="phoneNumber_err"></div>
-                        <p><b>Скайп :           </b>             <input class=green type=text name="skype"   id="skypeNumber">  </p>       <div class="error"  id="skypeNumber_err"></div>
-                </p>
-                <p>
-                        <b>Дата рождения :</b>
-                        <select  name="DoB" class=green>
+
+        <div id="panel1" >
+            <h2>Персональные данные:</h2><br>
+
+
+            <fieldset class="fieldset" ><br>
+                <label><b>Фамилия  :        </b></label><br> <input class="input"  type=text  name="surname"    id="userSurName">        <div class="error"  id="userSurName_err" ></div>
+                <label ><b>Имя :             </b></label><br> <input class="input" type=text  name="username"  id="userFirstName" >      <div class="error"  id="userFirstName_err" ></div>
+                <label><b>Отчество :         </b></label><br>   <input class="input" type=text  name="middlename" id="userMiddleName">     <div class="error"  id="userMiddleName_err"></div>
+
+                        <br><b>Дата рождения :</b>
+                        <select  name="DoB" >
                                 <option value="1" class="optcR">1</option>
                                 <option value="2" class="optcB">2</option>
                                 <option value="3" class="optcR">3</option>
@@ -92,7 +80,7 @@
                                 <option value="30" class="optcB" style="font-weight:bold;">30</option>
                                 <option value="31" class="optcR">31</option>
                         </select>
-                        <select  name="MoB" class=green>
+                        <select  name="MoB" >
                                 <option value="1" class="optcR">January</option>
                                 <option value="2" class="optcB">February</option>
                                 <option value="3" class="optcR">March</option>
@@ -106,7 +94,7 @@
                                 <option value="11" class="optcR" style="font-weight:bold;">November</option>
                                 <option value="12" class="optcB">December</option>
                         </select>
-                        <select  name="YoB" class=green>
+                        <select  name="YoB" >
                                 <option value="1940" class="optcR">1940</option>
                                 <option value="1941" class="optcB">1941</option>
                                 <option value="1942" class="optcR">1942</option>
@@ -169,16 +157,16 @@
                                 <option value="1999" class="optcB">1999</option>
                                 <option value="2000" class="optcR" style="font-weight:bold;">2000</option>
                                 <option value="2001" class="optcB">2001</option>
-                        </select>
-                </p>
-                <p>
-                <input  type=radio name="rad2" value="Student">Студент (ка)<br>
-                <input  type=radio name="rad2" value="Teacher">Преподаватель<br>
-                <input  type=radio name="rad2" value="Guest">Гость университета<br>
-                </p>
-                <p>
+                        </select><br><br>
+
+
+                <input  type=radio name="rad2" 	id="rad21" value="Student" required="required" >Студент (ка)<br>
+                <input  type=radio name="rad2" 	id="rad22" value="Teacher">Преподаватель<br>
+                <input  type=radio name="rad2"	id="rad23"  value="Guest">Гость университета<br><br>
+
+
                     <b>Факультет :</b>
-                    <select  name="faculty" class=green>
+                    <select  name="faculty" id="faculty">
                         <option value="2a" class="optcR">Высший Колледж Информатики НГУ</option>
                         <option value="2b" class="optcB">Геолого-Геофизический (ГГФ)</option>
                         <option value="2c" class="optcR">Гуманитарный (ГФ)</option>
@@ -193,31 +181,40 @@
                         <option value="2l" class="optcB">Философский (ФилФ)</option>
                         <option value="2m" class="optcR" style="font-weight:bold;">Экономический (ЭФ)</option>
                         <option value="2n" class="optcB">Юридический (ЮФ)</option>
-                    </select><br>
-                <p>
+                    </select><br><br>
+
                 <b>Форма обучения</b> (для студента) :  <br>
-                <input type=radio name="FoS" value="fos1">Очная<br>
-                <input type=radio name="FoS" value="fos2">Заочная<br>
-                <input type=radio name="FoS" value="fos3">Вечерняя<br>
-                <input type=radio name="FoS" value="fos4">Онлайн<br><br>
+                <input type=radio id ="FoS1" name="FoS" value="fos1">Очная<br>
+                <input type=radio id ="FoS2" name="FoS" value="fos2">Заочная<br>
+                <input type=radio id ="FoS3" name="FoS" value="fos3">Вечерняя<br>
+                <input type=radio id ="FoS4" name="FoS" value="fos4">Онлайн<br><br>
                 <b>Курс обучения</b> (для студента):
-                    <select name="YoS" class=green>
+                    <select name="YoS" >
                         <option value="yos1" class="optcR">Первый курс</option>
                         <option value="yos2" class="optcB">Второй курс</option>
                         <option value="yos3" class="optcR">Третий курс</option>
                         <option value="yos4" class="optcB">Четвертый курс</option>
                         <option value="yos5" class="optcR" style="font-weight:bold;" >Пятый курс</option>
                         <option value="yos6" class="optcB">Вечный студент</option>
-                    </select><br>
-                </p>
-                <p>
-                    <textarea rows="5" cols="55" name="textarea">Доп.информация</textarea><br><br>
-                </p>
-                <input type=hidden name=hid1 value="NGU"><br>
-                <input type=image class=button  src="images/okbutton.png" alt="Отправить"><br><br>
+                    </select><br><br>
+
+
+
+                <label><b>E-mail:    </b></label><br>  <input class=input type=email name="email"      id="userEmail">       <div class="error"  id="userEmail_err" ></div>
+                <label><b>Телефон :  </b></label><br>  <input class=input type=tel name="phone"        id="phoneNumber">     <div class="error"  id="phoneNumber_err"></div>
+                <label><b>Skype :    </b></label> <br> <input class=input type=text name="skype"       id="skypeNumber">     <div class="error"  id="skypeNumber_err"></div><br>
+                <b>Доп.информация :</b><br><br>
+                <textarea class="textarea" rows="5" cols="100" name="textfiled1"></textarea><br><br>
+				<input type=hidden name=hid1 value="NGU"><br>
+								
+                <input type=image class=button id="okbutton"  src="images/okbutton.png" alt="Отправить"><br><br>
+
+            </fieldset>
+        </div>	
     </form>
+	<br>
+
 <br>
-<hr class=headline >
 <div class=footer >
         <a  href="http://www.nsu.ru"><b><i>Официальный сайт НГУ </i></b></a>
         <b><i> &#169; 2016 </i></b>

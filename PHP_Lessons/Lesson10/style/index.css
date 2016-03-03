@@ -1,33 +1,23 @@
-body    {
-    margin-left : 10%;  /*слева от элемента */
-    margin-right : 40%;  /*справа от элемента */
+body    {	
+    margin-left : 20%;  /*слева от элемента */
+    margin-right : 20%;  /*справа от элемента */
+	background: url("../images/back.jpg");
 }
-.green {
-    padding-left : 5%;  /*слева от элемента */
-    color:green;
-    font-weight: bold;
-    font-size: 14px;
-}
-.header {
-    background-color: cornflowerblue;
-    padding-left:  630px;
-    border: 1px solid ;
-}
-.headline {
-    color:red;
-    height:2px;
-    width:100%;
 
-}
 .t1 {
+    width: 80%;
     border: 1px;
-    margin-left : -15px;
+    margin-left : -15%;
+    margin-right : 15%;
     alignment: center ;
 }
 table.t1:hover {
     border: 1px solid cornflowerblue;
     box-shadow: 15px 15px 15px lightskyblue;
 }
+img   { width:247px; height:160px;
+}
+
 .anitab1:hover {
     animation: anim1 5s;
     -webkit-animation: anim1 5s;
@@ -72,45 +62,85 @@ table.t1:hover {
     color:blue;
     font-weight:normal;
 }
+
+.headline {
+    height:2px;
+    width:100%;
+    alignment: center;
+}
 h1 {
-    font-family: 'Times New Roman', Times, serif; /* Гарнитура текста */
-    font-size:170%; /* Размер шрифта в процентах */
+    color: darkblue;
+    height:2px;
+    width:800px;
+    alignment: center;
+    font-family:Georgia;/* Гарнитура текста */
+    font-size:140%;/* Размер шрифта в процентах */
     font-weight: bold;
     font-kerning: auto;
-    margin-left: 50px;
+
+    margin-top: 30px;
 }
-p  {
+h2 {
+    font-family:Georgia;
+    font-size:100%;
+    margin:50px 0 10px;
+    text-align:left;
+}
+.yellow {
+    margin-left: 0px;  /*слева от элемента */
+    margin-right : 20%;  /*справа от элемента */
+    border:2px solid;
+    background-color:yellow;"
+}
+
+.form-panel { width:400px; height:900px;  /*справа от элемента */ }
+.form-panel fieldset { width:400px; height:900px;  margin-left: 30px;  margin-right : 50%; padding: 15px 0 0;  border:1px solid #abadac;  background-color:#ffffff; }
+.form-panel label    { float:left; width:106px; display:block; text-align:right; padding-top:2px; }
+.form-panel input    { float:left; width:200px; display: inline ; margin-bottom:13px; }
+.form-panel textarea { float:left; margin-bottom:13px;  }
+
+.activeField
+{
+    color: green;
+    background-image: none;
+    background-color: #ffffff;
+    border: solid 1px #33677F;
+}
+.idle
+{
+    border: solid 1px #85b1de;
+    background-repeat: repeat-x;
+    background-position: top;
+    background-color:#FFFFFF;
+}
+
+.desk {
     color: navy; /* Синий цвет текста */
-    margin: 3%;  /*вокруг элемента */
+    margin: 3%; /*вокруг элемента */
     margin-left: 20px; /* Отступ текста слева */
     padding: 15px; /* Расстояние от линии до текста */
-    background-color: dodgerblue ;
-    text-align: justify; /* Выравнивание текста по ширине */
-    font-family: Verdana, Arial, Helvetica, sans-serif;
-    font-size: 10pt; /* Размер шрифта в пунктах */
-    font-weight: 500;
-    font-kerning: auto;
-    border: solid 1px black;
 
+    border: solid 1px black;
     border-radius: 4px;
+    background-color: dodgerblue;
     box-shadow: 10px 10px 5px lightskyblue;
 }
+
 .button {
-    box-shadow: 5px 5px 5px grey;
-    margin-left: 420px;}
+    margin-left: 10px;}
 
 .button:hover {
-     box-shadow: 5px 5px 5px lightskyblue;
+    box-shadow: 5px 5px 5px lightskyblue;
 }
 
 .footer {
     margin: 5%; /*вокруг элемента */
     display: block;
-    box-shadow: 8px 8px 8px lightskyblue;
     opacity: 0.8;
 }
 .valid {
     box-shadow: 0 0 7px rgba(0, 200, 0, 0.92) !important;
+    border: solid 2px green;
 }
 
 .notValid {
